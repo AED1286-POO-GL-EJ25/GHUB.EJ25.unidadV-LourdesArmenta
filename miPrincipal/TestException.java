@@ -14,7 +14,7 @@ public class TestException{
                 System.out.println("El resultado = "+resultado);
                 break;
             }catch (ArithmeticException ex){
-                System.out.println("\\u001B[31m\\t***Error:ocurrio un error de division por cero.***\u001B[0m");
+                System.out.println("\u001B[31m\t***Error:ocurrio un error de division por cero.***\u001B[0m");
                 entrada.nextLine();
             }catch(InputMismatchException ex){
                 System.out.println("\u001B[31m\t***Error: Debe ingresar un número entero válido.***\u001B[0m");
