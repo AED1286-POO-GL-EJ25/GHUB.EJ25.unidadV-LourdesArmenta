@@ -15,7 +15,7 @@ public class TestException{
     public static int LeerEntero(String mensaje, Scanner scanner, int min, int max){
         while (true){
             try{
-                System.out.println("\u001B[34m"+mensaje+"\u001B[0m" ); //Mensaje azul
+                System.out.print("\u001B[34m"+mensaje+"\u001B[0m" ); //Mensaje azul
                 int valor = scanner.nextInt();
                 scanner.nextLine(); // consumir el ultimo enter
                 //validar el rango
