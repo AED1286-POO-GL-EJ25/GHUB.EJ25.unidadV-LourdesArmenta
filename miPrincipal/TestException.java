@@ -26,7 +26,7 @@ public class TestException{
                 }
                 
             } catch (InputMismatchException e){
-                System.out.println("\u001B[34m **** Error: debe introducir un valor valido \u001B[0m");
+                System.out.println("\u001B[31m **** Error: debe introducir un valor valido \u001B[0m");
                 scanner.nextLine();
 
             }
