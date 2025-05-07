@@ -4,27 +4,34 @@ import java.util.Scanner;
 public class TestException{
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        while (true) {
+        
+        int num1= LeerEntero("Intruduce un valor entero 1:", entrada, -32000,32000);               System.out.print("Introduce un valor entero diferente de cero:");
+        int num2= LeerEntero("Introduce un valor entero 2:", entrada, 1,100);
+        int resultado = num1/num2;
+        System.out.println("El resultado = "+resultado);
+                
+        
+    }
+    public static int LeerEntero(String mensaje, Scanner scanner, int min, int max){
+        while (true){
             try{
-                System.out.print("Introduce un valor entero :");
-                int num1= entrada.nextInt();
-                System.out.print("Introduce un valor entero diferente de cero:");
-                int num2= entrada.nextInt();
-                int resultado = num1/num2;
-                System.out.println("El resultado = "+resultado);
-                break;
-            }catch (ArithmeticException ex){
-                System.out.println("\u001B[31m\t***Error:ocurrio un error de division por cero.***\u001B[0m");
-                entrada.nextLine();
-            }catch(InputMismatchException ex){
-                System.out.println("\u001B[31m\t***Error: Debe ingresar un número entero válido.***\u001B[0m");
-                entrada.nextLine(); // Consumir la nueva línea
+                System.out.println("\u001B[34m"+mensaje+"\u001B[0m" ); //Mensaje azul
+                int valor = scanner.nextInt();
+                scanner.nextLine(); // consumir el ultimo enter
+                //validar el rango
+                if (valor<min || valor>max){
+                    System.out.println("\u001B[34m **** El valor debe estar entre "+min+" y "+max+ "\u001B[0m"); //Mensaje en rpjo
+                } else{ 
+                    return valor;
+                }
+                
+            } catch (InputMismatchException e){
+                System.out.println("\u001B[34m **** Error: debe introducir un valor valido \u001B[0m");
+                scanner.nextLine();
 
             }
         }
-        System.out.println("Lo que sigue....");
-        
-        
+
     }
 
 }
