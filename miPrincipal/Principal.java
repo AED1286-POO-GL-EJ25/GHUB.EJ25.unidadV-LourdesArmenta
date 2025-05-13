@@ -8,7 +8,8 @@ public class Principal {
 
     public static void main(String[] args) {
 
-        Aplicacion app = new Aplicacion();
+        try{
+            Aplicacion app = new Aplicacion();
 
              Scanner scanner = new Scanner(System.in);
 
@@ -31,6 +32,11 @@ public class Principal {
                 System.out.println("Nombre: "+u.getNombre());
                 System.out.println("Email: "+u.getEmail());
             }
+        }catch(ErrorFisicoException ex){
+            //ocurrio un error
+            System.out.println("Servicio temporalmente interrumpido:");
+            System.out.println(ex.getMessage());
+        }
        
     }
      private static String leerContrasena() {
